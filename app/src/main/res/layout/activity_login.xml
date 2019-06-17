@@ -29,7 +29,7 @@
         android:padding="10dp">
 
         <EditText
-            android:id="@+id/user_name"
+            android:id="@+id/edit_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:drawableLeft="@drawable/username"
@@ -38,7 +38,7 @@
             android:inputType="textEmailAddress" />
 
         <EditText
-            android:id="@+id/pass_word"
+            android:id="@+id/edit_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:drawableLeft="@drawable/userpassword"
@@ -51,7 +51,7 @@
     </LinearLayout>
 
     <TextView
-        android:id="@+id/login"
+        android:id="@+id/view_login"
         android:layout_width="127dp"
         android:layout_height="35dp"
         android:layout_below="@id/linearLayout"
@@ -64,7 +64,7 @@
         android:textColor="@color/colorFormBackground" />
 
     <Button
-        android:id="@+id/buttonLogin"
+        android:id="@+id/button_login"
         android:layout_width="193dp"
         android:layout_height="47dp"
         android:layout_alignParentBottom="true"

@@ -12,6 +12,11 @@ public class LoginResponse {
 
     private String token;
     private boolean success;
+    private String message;
+
+    public String getMessage() {
+        return message;
+    }
 
     public LoginResponse(String token, boolean success) {
         this.token = token;
