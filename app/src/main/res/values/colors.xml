@@ -3,8 +3,13 @@
     <color name="colorPrimary">#21a7ed</color>
     <color name="colorPrimaryDark">#3CB371</color>
     <color name="login">#808080</color>
+    <color name="products">#4661E7</color>
+    <color name="buttonText">#FFFFFF</color>
+    <color name="button">#0B24AD</color>
+    <color name="layoutButtons">#2E51FD</color>
     <color name="colorPrimaryBackground">#5F9EA0</color>
     <color name="colorAccent">#375290</color>
     <color name="colorFormBackground">#00FA9A</color>
     <color name="colorButtonBackground">#00FA9A</color>
+    <color name="colorDetail">#AFB3DA</color>
 </resources>

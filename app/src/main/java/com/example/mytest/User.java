@@ -1,20 +1,22 @@
 package com.example.mytest;
 
 public class User {
+    private String username;
+    private String password;
+    public boolean success;
+    public String token;
+
     public User(String username, String password) {
         this.username = username;
         this.password = password;
     }
 
-    private String username;
-
-    public String getUsername() {
-        return username;
+    public boolean isSuccess() {
+        return success;
     }
 
-    public String getPassword() {
-        return password;
+    public String getToken() {
+        return token;
     }
 
-    private String password;
 }

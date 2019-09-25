@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -12,7 +13,7 @@
         android:layout_above="@id/linearLayout"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="10dp"
-        android:text="@string/sign_in"
+        android:text="Sign Up"
         android:textAppearance="@style/Base.TextAppearance.AppCompat.Headline"
         android:textColor="@color/colorFormBackground" />
 
@@ -21,9 +22,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
-        android:layout_margin="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
         android:background="@color/colorFormBackground"
-        android:orientation="vertical"
+        android:orientation="horizontal"
         android:padding="10dp">
 
         <EditText
@@ -32,7 +34,7 @@
             android:layout_height="wrap_content"
             android:drawableLeft="@drawable/username"
             android:drawablePadding="5dp"
-            android:hint="@string/userName"
+            android:hint="userName"
             android:inputType="textEmailAddress" />
 
         <EditText
@@ -41,36 +43,37 @@
             android:layout_height="wrap_content"
             android:drawableLeft="@drawable/userpassword"
             android:drawablePadding="5dp"
-            android:hint="@string/pass"
+            android:hint="password"
             android:inputType="textPassword" />
+
 
 
     </LinearLayout>
 
     <TextView
         android:id="@+id/registration"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
+        android:layout_width="127dp"
+        android:layout_height="35dp"
+        android:layout_below="@id/linearLayout"
         android:layout_centerHorizontal="true"
-        android:layout_below="@+id/linearLayout"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="15dp"
         android:lineSpacingExtra="7dp"
-        android:text="@string/login"
+        android:text="Login"
         android:textAlignment="center"
         android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
         android:textColor="@color/colorFormBackground" />
 
     <Button
         android:id="@+id/button"
-        android:layout_width="200dp"
-        android:layout_height="50dp"
+        android:layout_width="193dp"
+        android:layout_height="47dp"
+        android:layout_alignParentBottom="true"
         android:layout_centerInParent="true"
+        android:layout_marginBottom="130dp"
         android:background="@color/colorPrimaryDark"
-        android:text="@string/btn"
+        android:text="Registration"
         android:textAllCaps="false"
         android:textColor="@color/colorButtonBackground"
-        android:textSize="18sp"
-        android:layout_below="@+id/linearLayout"
-        android:padding="7dp"/>
+        android:textSize="18sp" />
 
 </RelativeLayout>

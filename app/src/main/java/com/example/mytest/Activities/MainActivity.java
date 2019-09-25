@@ -1,4 +1,4 @@
-package com.example.mytest;
+package com.example.mytest.Activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -6,13 +6,19 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
-import okhttp3.ResponseBody;
+import com.example.mytest.Api;
+import com.example.mytest.R;
+import com.example.mytest.User;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener{
-    private EditText user_Name, pass_word;
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+        private EditText user_Name, pass_word;
+        private Api api;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,11 +26,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         user_Name = findViewById(R.id.user_name);
         pass_word = findViewById(R.id.pass_word);
-
         findViewById(R.id.button).setOnClickListener(this);
         findViewById(R.id.registration).setOnClickListener(this);
 
     }
+
     private void userSignUp() {
         String name = user_Name.getText().toString().trim();
         String pass = pass_word.getText().toString().trim();
@@ -48,40 +54,46 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             user_Name.setError("password should be no less 6 characters");
             user_Name.requestFocus();
             return;
-        };
+        }
+        User user = new User(name, pass);
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(Api.BASE_URL)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+        api = retrofit.create(Api.class);
+        sendRequest(user);
+    }
 
-        Call<ResponseBody> call = RetrofitClient
-                .getInstance()
-                .getApi()
-                .createNamePassword(name, pass);
-        call.enqueue(new Callback<ResponseBody>() {
+    private void sendRequest(User user) {
+        Call<User> call = api.createAccount(user);
+        call.enqueue(new Callback<User>() {
             @Override
-            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
-                try {
-                    String s = response.body().string();
-                    Toast.makeText(MainActivity.this, s, Toast.LENGTH_LONG).show();
-                } catch (Exception e) {
-                    e.printStackTrace();
+            public void onResponse(Call<User> call, Response<User> response) {
+                if (!response.isSuccessful()) {
+                    Toast.makeText(MainActivity.this, "Error" + response.code(), Toast.LENGTH_SHORT).show();
                 }
+                   User userResponse = response.body();
+                   Toast.makeText(MainActivity.this,"{Success: " + userResponse.isSuccess() +
+                       "\n" + "token: " + userResponse.getToken() + "}", Toast.LENGTH_SHORT).show();
             }
 
             @Override
-            public void onFailure(Call<ResponseBody> call, Throwable t) {
-                Toast.makeText(MainActivity.this, t.getMessage(), Toast.LENGTH_LONG).show();
+            public void onFailure(Call<User> call, Throwable t) {
+                  Toast.makeText(MainActivity.this, t.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
     }
 
     @Override
     public void onClick(View view) {
-        switch (view.getId()){
+        switch (view.getId()) {
 
             case R.id.button:
                 userSignUp();
                 break;
 
             case R.id.registration:
-                startActivity(new Intent(this, LoginActivity.class));
+                 startActivity(new Intent(this, LoginActivity.class));
                 break;
         }
     }

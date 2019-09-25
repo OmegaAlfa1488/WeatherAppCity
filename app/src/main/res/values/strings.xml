@@ -1,4 +1,21 @@
 <resources>
     <string name="app_name">MyTest</string>
     <string name="title_activity_login">LoginActivity</string>
+    <string name="btn">Registration</string>
+    <string name="login">Already have account? Click here to sign up</string>
+    <string name="sign_in">SIGN IN</string>
+    <string name="pass">password</string>
+    <string name="userName">user name</string>
+    <string name="signUp">SIGN UP</string>
+    <string name="textLogin">Enter username and password</string>
+    <string name="product1">Product 1</string>
+    <string name="product2">Product 2</string>
+    <string name="selectProducts">Select product for review</string>
+    <string name="idProduct">ID</string>
+    <string name="image">Image</string>
+    <string name="text">Description</string>
+    <string name="title">Title</string>
+    <string name="comments">Comments</string>
+    <string name="rate">Rate</string>
+    <string name="titleComment">Comments for the product and rating</string>
 </resources>
