@@ -75,7 +75,7 @@ public class ProductsActivity extends AppCompatActivity implements MyAdapter.OnI
 
     @Override
     public void onItemClick(int position) {
-        Intent intent = new Intent(this, CommentsActivity.class);
+        Intent intent = new Intent(this, DetailedActivity.class);
         ListItems clickedItem = listItems.get(position);
         intent.putExtra(EXTRA_ID, clickedItem.getId());
         intent.putExtra(EXTRA_URL, clickedItem.getImg());

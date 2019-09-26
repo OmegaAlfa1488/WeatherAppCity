@@ -2,6 +2,8 @@ package com.example.mytest.Activities;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -29,7 +31,7 @@ import static com.example.mytest.Activities.ProductsActivity.EXTRA_TEXT;
 import static com.example.mytest.Activities.ProductsActivity.EXTRA_TITLE;
 import static com.example.mytest.Activities.ProductsActivity.EXTRA_URL;
 
-public class CommentsActivity extends AppCompatActivity {
+public class DetailedActivity extends AppCompatActivity implements View.OnClickListener {
 
     public static String URL_DATA_COMMENTS = "http://smktesting.herokuapp.com/api/reviews/";
     private List<ListCommentsEvaluation> listItemsComments;
@@ -40,7 +42,7 @@ public class CommentsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_comments);
+        setContentView(R.layout.activity_detailed);
 
         listItemsComments = new ArrayList<>();
         Intent intent = getIntent();
@@ -51,6 +53,8 @@ public class CommentsActivity extends AppCompatActivity {
         ImageView imageView = findViewById(R.id.imageViewDetail);
         TextView viewTitle = findViewById(R.id.titleDetail);
         TextView viewText = findViewById(R.id.textDetail);
+        Button button = findViewById(R.id.buttonIntent);
+        button.setOnClickListener(this);
         Picasso.get().load(imageUrl).into(imageView);
         viewTitle.setText(title);
         viewText.setText(text);
@@ -89,5 +93,13 @@ public class CommentsActivity extends AppCompatActivity {
                 });
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         requestQueue.add(stringRequest);
+    }
+
+    @Override
+    public void onClick(View view) {
+        Intent intent;
+        intent = new Intent(this,CommentActivity.class);
+        intent.putExtra("idProduct",id);
+        startActivity(intent);
     }
 }

@@ -18,4 +18,8 @@
     <string name="comments">Comments</string>
     <string name="rate">Rate</string>
     <string name="titleComment">Comments for the product and rating</string>
+    <string name="buttonTitle">Leave Comment</string>
+    <string name="textForIntent">Press button to open comment form</string>
+    <string name="buttonSend">Send a comment</string>
+    <string name="titleSendComment">Evaluation Form</string>
 </resources>

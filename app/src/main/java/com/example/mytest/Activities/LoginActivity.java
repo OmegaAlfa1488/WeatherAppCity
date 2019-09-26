@@ -63,6 +63,10 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                             Toast.makeText(LoginActivity.this, "You didn't Sign In", Toast.LENGTH_SHORT).show();
                             outToMain();
                         }
+                        else {
+                            outToMain();
+                            Toast.makeText(LoginActivity.this, "User not found or password mismatch", Toast.LENGTH_SHORT).show();
+                        }
                         }
                      @Override
                     public void onFailure(Call<User> call, Throwable t) {

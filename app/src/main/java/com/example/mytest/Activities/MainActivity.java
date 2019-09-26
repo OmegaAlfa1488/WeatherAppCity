@@ -30,7 +30,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.registration).setOnClickListener(this);
 
     }
-
+    public void enterLogin() {
+        startActivity(new Intent(this, LoginActivity.class));
+    }
     private void userSignUp() {
         String name = user_Name.getText().toString().trim();
         String pass = pass_word.getText().toString().trim();
@@ -69,12 +71,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         call.enqueue(new Callback<User>() {
             @Override
             public void onResponse(Call<User> call, Response<User> response) {
+                User userResponse = response.body();
+
                 if (!response.isSuccessful()) {
                     Toast.makeText(MainActivity.this, "Error" + response.code(), Toast.LENGTH_SHORT).show();
+                } else if (userResponse.getToken() != null & userResponse.isSuccess()) {
+
+                    Toast.makeText(MainActivity.this, "{Success: " + userResponse.isSuccess() +
+                            "\n" + "token: " + userResponse.getToken() + "}", Toast.LENGTH_SHORT).show();
+                    enterLogin();
                 }
-                   User userResponse = response.body();
-                   Toast.makeText(MainActivity.this,"{Success: " + userResponse.isSuccess() +
-                       "\n" + "token: " + userResponse.getToken() + "}", Toast.LENGTH_SHORT).show();
+                else {
+                    return;
+                }
             }
 
             @Override

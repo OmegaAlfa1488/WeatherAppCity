@@ -3,8 +3,9 @@ package com.example.mytest;
 public class User {
     private String username;
     private String password;
-    public boolean success;
+    private boolean success;
     public String token;
+
 
     public User(String username, String password) {
         this.username = username;

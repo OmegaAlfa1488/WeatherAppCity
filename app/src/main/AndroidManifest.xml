@@ -16,7 +16,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".Activities.CommentsActivity"></activity>
+        <activity android:name=".Activities.CommentActivity"></activity>
+        <activity android:name=".Activities.DetailedActivity" />
         <activity android:name=".Activities.ProductsActivity">
             <intent-filter>
                 <action android:name="android.intent.action.DEFAULT" />

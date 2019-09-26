@@ -12,4 +12,6 @@
     <color name="colorFormBackground">#00FA9A</color>
     <color name="colorButtonBackground">#00FA9A</color>
     <color name="colorDetail">#AFB3DA</color>
+    <color name="colorFormColor">#BAB7C5</color>
+    <color name="colorButtonSend">#ADADEE</color>
 </resources>
