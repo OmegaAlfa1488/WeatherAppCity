@@ -5,11 +5,11 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class WeatherApi {
-public static final String baseUrl = "http://api.openweathermap.org/";
+public static final String baseUrl = "https://api.openweathermap.org/";
    public static WeatherApiService getWeatherApiService() {
-       HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
-       interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
-       OkHttpClient client = new OkHttpClient.Builder().addInterceptor(interceptor).build();
+       HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
+       logging.level(HttpLoggingInterceptor.Level.BODY);
+       OkHttpClient client = new OkHttpClient.Builder().addInterceptor(logging).build();
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(baseUrl)
                 .addConverterFactory(GsonConverterFactory.create())

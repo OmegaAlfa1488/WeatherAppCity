@@ -9,7 +9,7 @@ import retrofit2.http.Query;
 
 public interface WeatherApiService {
 
-   @Headers("x-api-key: " + BuildConfig.API_KEY)
+    @Headers("x-api-key: " + BuildConfig.API_KEY)
     @GET("data/2.5/weather")
     Call<WeatherModel> requestWeather(@Query("q") String city,@Query("units") String units);
 }

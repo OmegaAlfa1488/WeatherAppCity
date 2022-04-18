@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+    <data>
+        <variable
+            name="taskItem"
+            type="com.example.mvvmpattern.model.TaskItem" />
+
+    </data>
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/task_event"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            tools:text="@string/task"
+            android:text="@{taskItem.event}"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="20dp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/task_status"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            tools:text="@string/status"
+            android:text="@{taskItem.state}"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="20dp"
+            android:textColor="@color/teal_200"/>
+
+        <CheckBox
+            android:id="@+id/chb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-6dp"
+            android:layout_toLeftOf="@+id/task_status"
+            android:checked="@{taskItem.checked}"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+
+    </RelativeLayout>
+</layout>

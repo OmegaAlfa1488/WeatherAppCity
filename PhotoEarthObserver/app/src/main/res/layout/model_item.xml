@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/itemCard"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    app:cardBackgroundColor="@color/background_frag">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/epic_img"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:contentDescription="@string/image_content_description"
+            app:srcCompat="@drawable/nasa_logo" />
+
+        <TextView
+            android:textStyle="bold"
+            android:id="@+id/epic_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/epic_img"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="16dp"
+            android:layout_toEndOf="@+id/epic_img"
+            android:text="@string/date"
+            android:textColor="@color/white"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/epic_desc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/epic_img"
+            android:layout_alignStart="@+id/epic_img"
+            android:layout_margin="15dp"
+            android:text="@string/epic_desc"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:textStyle="italic|bold"
+            />
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

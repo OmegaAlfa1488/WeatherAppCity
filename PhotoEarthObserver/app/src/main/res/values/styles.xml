@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="dark_toobar" parent="@android:style/TextAppearance.Medium">
+        <item name="android:background">@drawable/strip_sky</item>
+    </style>
+    <style name="MyAppTheme" parent="Theme.AppCompat.Light">
+        <item name="colorAccent">#47A891</item>
+        <item name="colorControlActivated">#33691e</item>
+        <item name="android:selectableItemBackgroundBorderless">@color/teal_200</item>
+        <item name="colorControlHighlight">#d50000</item>
+        <item name="android:textColorPrimary">@color/white</item>
+    </style>
+</resources>

@@ -1,0 +1,39 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/about_fragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.AboutFragment"
+    android:background="@color/background_nav_frag">
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/image_epic"
+            android:src="@drawable/epic"/>
+
+                <TextView
+                    android:id="@+id/text_about"
+                    android:layout_width="350dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/image_epic"
+                    android:layout_centerInParent="true"
+                    android:layout_marginTop="15dp"
+                    android:fontFamily="sans-serif-light"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:text="@string/about_epic"
+                    android:textColor="@color/white"
+                    android:textSize="15sp" />
+                <ImageView
+                    android:layout_centerInParent="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/image_telescope"
+                    android:src="@drawable/telescope"
+                    android:layout_below="@id/text_about"/>
+        </RelativeLayout>
+</FrameLayout>
